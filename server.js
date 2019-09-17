@@ -31,6 +31,10 @@ server.use(express.json());
 server.use(cors());
 server.use(session(sessionConfig));
 
+//routes
+const usersRouter =require('./routes/users-router.js');
+server.use('/api/users', usersRouter);
+
 server.get('/', (req, res ) => {
     res.send(`testing web auth iii project`)
 })
